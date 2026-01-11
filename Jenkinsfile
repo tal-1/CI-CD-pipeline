@@ -6,6 +6,7 @@ pipeline {
         REGION  = "us-east-1"
     }
 
+
     stages {
         stage('Build & Test') {
             agent { docker { image 'python:3.9-slim' } }
@@ -16,6 +17,7 @@ pipeline {
                 }
             }
         }
+
 
         stage('Build & Push Image') {
             agent { label 'built-in' }
